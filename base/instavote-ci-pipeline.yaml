@@ -76,7 +76,7 @@ spec:
     taskRef:
       name: kaniko
     runAfter:
-    - misc
+    - fetch-repo
     workspaces:
     - name: source
       workspace: shared-data
