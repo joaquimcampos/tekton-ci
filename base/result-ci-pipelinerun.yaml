@@ -6,6 +6,9 @@ metadata:
 spec:
   pipelineRef:
     name: instavote-ci
+  podTemplate:
+    securityContext:
+      fsGroup: 1000  # This ensures files are writable by non-root users
   workspaces:
   - name: shared-data
     volumeClaimTemplate:

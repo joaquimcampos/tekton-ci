@@ -88,13 +88,14 @@ spec:
     - name: IMAGE
       value: '$(params.imageUrl):$(params.imageTag)'
     - name: EXTRA_ARGS
-      value: "--skip-tls-verify"
+      value:
+        - "--skip-tls-verify"
   - name: verify-digest
     runAfter:
     - img-build-publish
     params:
     - name: digest
-      value: $(tasks.img-build-publish.results.IMAGE-DIGEST)
+      value: $(tasks.img-build-publish.results.IMAGE_DIGEST)
     taskSpec:
       params:
       - name: digest
