@@ -20,13 +20,12 @@ spec:
       secretName: dockerhub-creds
   params:
   - name: repoUrl
-    value: https://github.com/xxxxxx/example-voting-app.git
+    value: https://github.com/joaquimcampos/LFD254-example-voting-app.git
   - name: revision
     value: main
   - name: sparseCheckoutDirectories
     value: /result/
   - name: imageUrl
-    value: xxxxxx/result
+    value: jcampos15/result
   - name: pathToContext
     value: result
-

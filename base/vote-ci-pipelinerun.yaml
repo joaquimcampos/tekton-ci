@@ -5,13 +5,13 @@ metadata:
   name: vote-ci
 spec:
   pipelineRef:
-    name: instavote-ci
+    name: instavote-ci  # pipeline (template) that this refers to
   workspaces:
   - name: shared-data
     volumeClaimTemplate:
       spec:
         accessModes:
-        - ReadWriteOnce
+        - ReadWriteOnce  # whether this is available in multiple nodes or just one node
         resources:
           requests:
             storage: 1Gi
@@ -20,12 +20,12 @@ spec:
       secretName: dockerhub-creds
   params:
   - name: repoUrl
-    value: https://github.com/xxxxxx/example-voting-app.git
+    value: https://github.com/joaquimcampos/LFD254-example-voting-app.git
   - name: revision
-    value: main
+    value: main  # git branch
   - name: sparseCheckoutDirectories
     value: /vote/
   - name: imageUrl
-    value: xxxxxx/vote
+    value: jcampos15/vote
   - name: pathToContext
     value: vote
